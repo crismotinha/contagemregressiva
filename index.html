@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Contagem Regressiva</title>
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body>
+	<div>
+		<h1> Contagem Regressiva </h1>
+		<p> Faltam só </p>
+		<h2><span id="contagem"></span></h2>
+	</div>
+	<style type="text/css">
+		body {
+			font-family: 'Indie Flower', cursive;
+			background-color: lightblue;
+			font-size: 1em;
+		}
+		div {
+			margin: 0, auto, 0, auto;
+		}
+
+	</style>
+	<script type="text/javascript">
+		var today = new Date();
+		console.log(today)
+		var ultimoDia = new Date(2016,10,5,00,00,0);
+		console.log(ultimoDia);
+		var tempoRestanteMs = ultimoDia - today;
+		var segundos = parseInt(tempoRestanteMs/1000);
+		var minutos = parseInt(segundos / 60);
+		var horas = parseInt(minutos/60);
+		var dias =parseInt((horas)/24);
+		segundos = segundos - (minutos*60);
+		minutos = minutos - (horas*60);
+		horas = horas - (dias*24);
+		document.getElementById('contagem').innerHTML = dias + " dias, "+ horas + " horas e " + minutos + " minutos!!"
+	</script>
+</body>
+</html>
